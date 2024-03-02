@@ -14,7 +14,9 @@ const { PORT } = require("./src/config/dotenvConfig");
 const apiRoutes = require("./src/routes/index");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+})
 app.use("/api", apiRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
