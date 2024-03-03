@@ -8,14 +8,14 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
-// app.use(
-//   cors({
-//     origin: "https://notesapp-client.vercel.app",
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     preflightContinue: false,
-//     optionsSuccessStatus: 204,
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://notesapp-client.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
+);
 
 const connectDB = require("./src/config/database");
 const { PORT } = require("./src/config/dotenvConfig");
