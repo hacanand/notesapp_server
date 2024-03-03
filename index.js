@@ -4,8 +4,7 @@ const app = express();
 var cors = require("cors");
 app.use(
   cors({
-    origin: "https://notesapp-client.vercel.app/",
-    optionsSuccessStatus: 200,
+    origin: "https://notesapp-client.vercel.app",
     credentials: true,
   })
 );
