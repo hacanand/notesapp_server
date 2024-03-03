@@ -2,15 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 var cors = require("cors");
-app.use(cors(
-  {
-    origin: "*",
+app.use(
+  cors({
+    origin: "https://notesapp-client.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
-    optionsSuccessStatus: 204
-    
-  }
-));
+    optionsSuccessStatus: 204,
+  })
+);
 
 const connectDB = require("./src/config/database");
 const { PORT } = require("./src/config/dotenvConfig");
